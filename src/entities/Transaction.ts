@@ -22,8 +22,7 @@ export class Transaction {
   receiver!: User;
 
   @Column('decimal', { precision: 10, scale: 2 })
-  amount!: string; // TypeORM returns decimal as string
-
+  amount!: string; 
   @CreateDateColumn({ name: 'created_at' })
   createdAt!: Date;
 }

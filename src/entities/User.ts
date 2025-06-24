@@ -26,6 +26,8 @@ export class User {
   @Column('decimal', { precision: 10, scale: 2, default: 0 })
   balance!: number;
 
+  @Column({ default: false })
+  isEmailVerified!: boolean;  
   @OneToMany(() => Transaction, tx => tx.sender)
   sent!: Transaction[];
 

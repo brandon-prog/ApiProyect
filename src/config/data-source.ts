@@ -10,7 +10,10 @@ export const AppDataSource = new DataSource({
   username: envs.DATABASE_USERNAME,
   password: envs.DATABASE_PASSWORD,
   database: envs.DATABASE_NAME,
-  synchronize: true, 
+  synchronize: true,
   logging: false,
+  ssl: {
+    rejectUnauthorized: false,
+  },
   entities: [User, Transaction],
 });

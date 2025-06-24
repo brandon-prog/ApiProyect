@@ -20,21 +20,23 @@ __decorate([
     __metadata("design:type", String)
 ], Transaction.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => User_1.User, user => user.sent),
+    (0, typeorm_1.Index)(),
+    (0, typeorm_1.ManyToOne)(() => User_1.User, user => user.sent, { eager: true }),
     __metadata("design:type", User_1.User)
 ], Transaction.prototype, "sender", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => User_1.User, user => user.received),
+    (0, typeorm_1.Index)(),
+    (0, typeorm_1.ManyToOne)(() => User_1.User, user => user.received, { eager: true }),
     __metadata("design:type", User_1.User)
 ], Transaction.prototype, "receiver", void 0);
 __decorate([
     (0, typeorm_1.Column)('decimal', { precision: 10, scale: 2 }),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], Transaction.prototype, "amount", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)(),
+    (0, typeorm_1.CreateDateColumn)({ name: 'created_at' }),
     __metadata("design:type", Date)
-], Transaction.prototype, "transaction_date", void 0);
+], Transaction.prototype, "createdAt", void 0);
 exports.Transaction = Transaction = __decorate([
     (0, typeorm_1.Entity)()
 ], Transaction);

@@ -20,7 +20,7 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 100 }),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], User.prototype, "name", void 0);
 __decorate([
@@ -32,7 +32,7 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "password", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 20 }),
+    (0, typeorm_1.Column)({ unique: true }),
     __metadata("design:type", String)
 ], User.prototype, "account_number", void 0);
 __decorate([
@@ -40,9 +40,9 @@ __decorate([
     __metadata("design:type", Number)
 ], User.prototype, "balance", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)(),
-    __metadata("design:type", Date)
-], User.prototype, "created_at", void 0);
+    (0, typeorm_1.Column)({ default: false }),
+    __metadata("design:type", Boolean)
+], User.prototype, "isEmailVerified", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => Transaction_1.Transaction, tx => tx.sender),
     __metadata("design:type", Array)
